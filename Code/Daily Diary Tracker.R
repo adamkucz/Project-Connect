@@ -56,7 +56,7 @@ convertClass <- function(data, class_names, ...){
 isEnrolled <- function(IDs, date_col, id_col){
   # Create column indicating whether participant is enrolled or not
   IDs <- IDs %>%
-    mutate(enrolled = !is.na(IDs[, "Date Enrolled EMA"]) & !is.POSIXct(ids[, "Date Enrolled EMA"])) %>%
+    mutate(enrolled = !is.na(IDs[, "Date Enrolled EMA"]) & !is.POSIXct(IDs[, "Date Enrolled EMA"])) %>%
     filter(!`Drop Out`, !Finished)
   
   # Print warning indicating which IDs are do not have valid enrollment dates
